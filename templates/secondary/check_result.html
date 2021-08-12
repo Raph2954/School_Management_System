@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for result in ResultForm %}
+        {{ form.studentname }}
+        {{ form.term }}
+        {{ form.class }}
+        {{ form.subject }}
+
+    {% endfor %}
+
+{% endblock %}

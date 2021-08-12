@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <h3 class="text-info offset shadow p-3 mb-5 bg-#34495e rounded ">Classes</h3>
+
+    <table class="container col-md-9 table-hover">
+
+        <thead>
+        <tr>
+            <th>Class</th>
+             <th>NUmber of Students</th>
+             <th>Paid Fees</th>
+             <th>Owing</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for Class in classes %}
+            <tr>
+                <td>{{Class}}
+                </td>
+                <td>
+                 {{ Class.Number_Of_Students_In_Class }}
+                </td>
+                <td>
+                {{  Class.Number_Of_Students_That_Have_Paid_Fees }}
+                </td>
+                <td>
+                 {{Class.Number_Of_Students_Owing_Outstanding_Debt}}
+                </td>
+
+
+        {% endfor %}
+    </tr>
+    </tbody>
+    </table>
+    </div>
+{% endblock %}

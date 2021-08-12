@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <div class="offset-3">
+        <div class="container">
+
+                <h4 class="text-info offset-2 shadow p-3 mb-5 bg-#34495e rounded col-md-4"> Login Page</h4>
+
+
+                {% if form.errors %}
+                    <p class="text-danger offset-4">your username and password didn't match. Please try again</p>
+                {% else %}
+
+
+                <div class="login-form">
+                    <form action="./" method="post" class="login100-form ">
+                        <div class="col-md-9">
+                            {{ form|crispy}}
+                            {% csrf_token %}
+                        </div>
+                        <div class="col-md-5">
+                        <p><button class="btn btn-primary col-md-5 offset-5" type="submit">Login</button></p>
+                        </div>
+                    </form>
+                {% endif %}
+                    <p class="offset-3 text-black-50"><a href="{% url "password-reset" %}">Forgotten your password</a> </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <h3 class="text-info offset shadow p-3 mb-5 bg-#34495e rounded ">Staff Members</h3>
+
+    <table class="container col-md-9 ">
+    {% for Teacher in teachers %}
+
+        <tbody>
+            <tr>
+                <td><img src=" {{ Teacher.Photo }}" class="rounded-circle">
+
+
+                </td>
+                <td class="text-capitalize text-white"><b>
+                    {{ Teacher.First_Name }}
+                    {{ Teacher.Last_Name }}
+                </b>
+                </td>
+                <td>
+                     {{ Teacher.Qualification }}
+                </td>
+                <td>
+                    {{ Teacher.Subjects_Handling }}
+                </td>
+                <td>
+                    {{ Teacher.Phone_Number }}
+                </td>
+                <td>
+                    {{ Teacher.Email }}
+                </td>
+            </tr>
+        </tbody>
+
+    {% endfor %}
+
+    </table>
+    </div>
+{% endblock %}

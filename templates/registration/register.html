@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Create an account{% endblock %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <br>
+        <p>You are already signed up, you can visit your dashboard <a href="{% url 'dashboard' %}">here</a></p>
+
+    {% else %}
+    <div class="container-fluid">
+    <div class="col-md-6 offset-3">
+        <h3 class="text-info  shadow p-3 mb-5 bg-#34495e rounded">Create an account</h3>
+        <em class="offset-3">Please, sign up by filling the fields below</em>
+        <form action="." method="POST">
+            {{ user_form|crispy }}
+            {% csrf_token %}
+            <div class="col-md-5">
+            <p class=""><button class="btn btn-primary offset-lg-11 col-lg-10" type="submit">Create Account</button></p>
+            </div>
+        </form>
+    </div>
+    </div>
+   {% endif %}
+{% endblock %}

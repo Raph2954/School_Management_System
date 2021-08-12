@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Result insertion page
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <h2>Result insertion page</h2>
+    <p>please insert a new result</p>
+
+    <form method="post" action="../">
+    {% csrf_token %}
+
+            <label class="col-md-2 control-label"><b>Student's name</b></label>
+            {{ form.studentname}}
+            <label class="col-md-1 control-label"><b>Term</b></label>
+            {{ form.term }}
+        <div class="container">
+            <table class="table table-bordered table table-hover table table-container">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Subject</th>
+                <th>first CA</th>
+                <th>second CA</th>
+                <th>third CA</th>
+                <th>Exam</th>
+                <th>total score</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>{%for subject in subjects %}
+                <td>1</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>{% endfor %}
+            </tr>
+            <tr>
+                <td class="active">2</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>
+            </tr>
+            <tr>
+                <td class="active">3</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>
+            </tr>
+            <tr>
+                <td class="active">4</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>
+            </tr>
+            <tr>
+                <td class="active">5</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>
+            </tr>
+            <tr>
+                <td class="active">6</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>
+            </tr>
+            <tr>
+                <td class="active">7</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>
+            </tr>
+            <tr>
+                <td class="active">8</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>
+            </tr>
+            <tr>
+                <td class="active">9</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>
+            </tr>
+            <tr>
+                <td class="active">10</td>
+                <td>{{ form.subject }}</td>
+                <td>{{ form.firstCA }}</td>
+                <td>{{ form.secondCA }}</td>
+                <td>{{ form.thirdCA}}</td>
+                <td>{{ form.exams }}</td>
+                <td>{{ form.total }}</td>
+            </tr>
+            </tbody>
+
+
+    </table>
+    </div>
+    <a class=" btn btn-success border-success" href="{% url 'result_success' %}">complete</a>
+    </form>
+
+    </div>
+
+</div>
+{% endblock %}

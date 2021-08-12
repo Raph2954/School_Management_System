@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+{% block title %} Dashboard{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <div class="col-md-5 text-capitalize glyphicon-dashboard">
+        <h3 class="shadow p-3 mb-5 bg-#34495e rounded text-info">Dashboard</h3>
+        <p>_______________________________</p>
+        <p class="glyphicon-dashboard text-success"><em>Hello {{ user.first_name }}, Welcome to your dashboard</em></p>
+        <p><a class="text-white" href="#">your Info</a></p>
+        <p><a class="glyphicon-education text-white" href="{% url 'add_result' %}">Input students result</a></p>
+        <p><a class="glyphicon-adjust text-white" href="{% url 'students' %}">All students</a></p>
+        <p><a class="glyphicon-adjust text-white" href="{% url 'studentdetail' %}">All students Details</a></p>
+        <p><a class="glyphicon-adjust text-white" href="{% url 'settings' %}">Account settings</a></p>
+
+    </div>
+
+    </div>
+{% endblock %}

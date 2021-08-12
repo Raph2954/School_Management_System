@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+    {% for User in users %}
+        <br>
+    <em class="text-info ">{{user }}'s profile </em>
+
+    <p class="text-info">____________________________</p>
+        <p><img src="{{ User.Image}}"></p>
+        <p><label class="text-success">Name :</label>  {{ user.userdetail.first_name}} {{ user.last_name }}</p>
+        <p><label class="text-success">Email :</label>  {{ user.email}}</p>
+        <p><label class="text-success">Date of Birth :</label>  {{ user.Date_of_birth}}</p>
+        <p><label class="text-success">Fees Status :</label>   {{ Student.PaidTuition}}</p>
+        <p><label class="text-success">Address :</label>   {{ Student.Address}}</p>
+        <p><label class="text-success">Guardians Contact :</label>   {{ Student.Guardians_Phone_Number}}</p>
+    {% endfor %}
+    </div>
+{% endblock %}

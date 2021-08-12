@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <h3 class="shadow p-3 mb-5 bg-#34495e rounded text-info">Students Bios</h3>
+    {% for Student in students %}
+        <br>
+    <em class="text-info ">{{Student.first_name }}'s Biodata </em>
+
+    <p class="text-info">____________________________</p>
+        <p><img src="{{ Student.Image}}" class="rounded"></p>
+        <p><label class="text-success">Name :</label>  {{ Student.first_name}} {{ Student.last_name }}</p>
+        <p><label class="text-success">Class :</label>  {{ Student.Current_class}}</p>
+        <p><label class="text-success">Date of Birth :</label>  {{ Student.Date_of_birth}}</p>
+        <p><label class="text-success">Gender :</label>  {{ Student.Gender}}</p>
+        <p><label class="text-success">Fees Status :</label>   {{ Student.PaidTuition}}</p>
+        <p><label class="text-success">Address :</label>   {{ Student.Address}}</p>
+        <p><label class="text-success">Guardians Contact :</label>   {{ Student.Guardians_Phone_Number}}</p>
+        <p><label class="text-success">Result :</label>   {{ Student.Result}}</p>
+        <p><button class="btn btn-success" type="submit" href="{{ Student.Add_Result }}">Add result</button></p>
+    {% endfor %}
+    </div>
+{% endblock %}

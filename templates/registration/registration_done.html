@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+<div class="container-fluid">
+<div class="col-md-5">
+{% block title %}
+Welcome
+{% endblock %}
+<div class="col-md-5">
+{% block content %}
+    <h1 class="shadow p-3 mb-5 bg-#34495e rounded">Hello, {{ new_user.first_name }}!</h1>
+    <p class="text-success">Your account has been successfully created. Now you can now <a href="{% url "login" %}">Login</a> </p>
+    </div>
+</div>
+</div>
+{% endblock %}
